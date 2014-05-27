@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Teech.init("0wh2OGVXJbbFhm3dVyyj5CjHu7hcplLkCrQUGL8c", "95dc229fb12d423a9703581811e3ba6a");
+		Teech.init("xxxxxxxxxxxxxxxxxxx23423bajdaxxa", "xxxxx4656mfkxxxsYtrE45xx");
 		
 		Button login = (Button)findViewById(R.id.buttonLogIn);
 		login.setOnClickListener(new View.OnClickListener() {
