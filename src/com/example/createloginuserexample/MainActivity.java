@@ -33,10 +33,6 @@ public class MainActivity extends Activity {
 		login.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				EditText text2 = (EditText)findViewById(R.id.editText1);
-				user = text2.getText().toString();
-				EditText text3 = (EditText)findViewById(R.id.editText2);
-				psw = text3.getText().toString();
 				
 				ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
 				final NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
@@ -71,6 +67,10 @@ public class MainActivity extends Activity {
 
 		protected String doInBackground(String... urls){
 			String result="";
+			EditText text2 = (EditText)findViewById(R.id.editText1);
+			user = text2.getText().toString();
+			EditText text3 = (EditText)findViewById(R.id.editText2);
+			psw = text3.getText().toString();
 			User u = new User();
 			boolean b = u.logIn(user, psw);
 			if(b){
