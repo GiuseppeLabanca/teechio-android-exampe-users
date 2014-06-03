@@ -1,4 +1,4 @@
-Teech.io Android Library - Example of Teech.io User Object
-=========
+###Teech.io Android Library - Example of Teech.io User Object
+
 
 
