@@ -1,8 +1,10 @@
 package com.example.createloginuserexample;
 
-import com.example.createloginuserexample.MainActivity.LogInTeech;
-
-import teech.sdk.User;
+import teech.sdk.*;
+import teech.sdk.exceptions.APIConnectionException;
+import teech.sdk.exceptions.InvalidRequestException;
+import teech.sdk.exceptions.TeechAuthenticationException;
+import teech.sdk.exceptions.TeechException;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -54,18 +56,32 @@ public class Create extends Activity {
 			EditText text3 = (EditText)findViewById(R.id.editText3);
 			psw = text3.getText().toString();
 			
-			String result;
+			String result="0";
 			User u = new User();
 			u.put("username", user); //required
 			u.put("password", psw); //required
 			u.put("email",email);
-			boolean created = u.save();		
-			if(created){
+			try {
+				u.save();
 				result="1";
-			}else{
-				result="0";
+			} catch (InvalidRequestException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (TeechAuthenticationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (APIConnectionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (TeechException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			return result;
+			return result;	
+			
 		}
 
 		protected void onPostExecute(String result) {

@@ -3,6 +3,10 @@ package com.example.createloginuserexample;
 
 import teech.sdk.Teech;
 import teech.sdk.User;
+import teech.sdk.exceptions.APIConnectionException;
+import teech.sdk.exceptions.InvalidRequestException;
+import teech.sdk.exceptions.TeechAuthenticationException;
+import teech.sdk.exceptions.TeechException;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -66,18 +70,32 @@ public class MainActivity extends Activity {
 		}
 
 		protected String doInBackground(String... urls){
-			String result="";
+			String result="0";
 			EditText text2 = (EditText)findViewById(R.id.editText1);
 			user = text2.getText().toString();
 			EditText text3 = (EditText)findViewById(R.id.editText2);
 			psw = text3.getText().toString();
 			User u = new User();
-			boolean b = u.logIn(user, psw);
-			if(b){
+			try {
+				u.auth(user, psw);
 				result = "1";
-			}else{
-				result = "0";
+			} catch (InvalidRequestException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (TeechAuthenticationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (APIConnectionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (TeechException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
+			
 			return result;
 		}
 
