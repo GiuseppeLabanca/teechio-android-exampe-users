@@ -65,19 +65,15 @@ public class Create extends Activity {
 				u.save();
 				result="1";
 			} catch (InvalidRequestException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (TeechAuthenticationException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (APIConnectionException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (TeechException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 			return result;	

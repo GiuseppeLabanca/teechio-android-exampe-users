@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Teech.init("xxxxxxxxxxxxxxxxxxx23423bajdaxxa", "xxxxx4656mfkxxxsYtrE45xx");
+		Teech.init("xxxxxxxxxxxxxxxxxxx23423bajdaxxa", "xxxxx4656mfkxxxsYtrE45xx"); //insert your apiKey and appKey
 		
 		Button login = (Button)findViewById(R.id.buttonLogIn);
 		login.setOnClickListener(new View.OnClickListener() {
